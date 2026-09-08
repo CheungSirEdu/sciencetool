@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:35:19.228Z",
+  "updatedAt": "2026-09-08T08:35:40.311Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -1084,12 +1084,11 @@
       "topic": "10.天氣",
       "name": "風向儀",
       "photos": [
-        "自製指南針、方向儀.jpeg",
         "mtsexg9t-image.jpg"
       ],
       "source": "excel",
       "editedOnWeb": true,
-      "updatedAt": "2026-09-08T08:33:49.592Z",
+      "updatedAt": "2026-09-08T08:35:40.311Z",
       "sort": 30
     },
     {
