@@ -340,6 +340,7 @@ button { cursor: pointer; }
 .item-card .edit-btns {
   display: none;
   gap: 6px;
+  flex-wrap: wrap;
 }
 body.editing .item-card .edit-btns { display: flex; }
 .icon-btn {
@@ -349,6 +350,18 @@ body.editing .item-card .edit-btns { display: flex; }
   padding: 4px 8px;
   font-size: 12px;
 }
+.icon-btn.camera {
+  background: var(--leaf);
+  color: #f7f3ea;
+  border-color: transparent;
+}
+.sort-btns { display: none; gap: 4px; }
+body.editing .sort-btns { display: flex; }
+.item-card.can-drag { cursor: grab; }
+.item-card.dragging { opacity: .45; }
+.item-card.drag-over { outline: 2px dashed var(--leaf); }
+.photo-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+.photo-actions .btn { min-height: 44px; flex: 1; }
 
 .modal-back {
   position: fixed;
@@ -666,6 +679,11 @@ body.editing .banner { display: block; }
     gap: 8px;
   }
   body.editing .item-card .edit-btns {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    width: 100%;
+  }
+  body.editing .sort-btns {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     width: 100%;

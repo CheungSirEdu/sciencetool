@@ -9,21 +9,24 @@
   };
   const CHINESE_NUM = { 1: "一", 2: "二", 3: "三", 4: "四", 5: "五", 6: "六" };
   const SITE_URL = "https://sciencetool.surge.sh/";
-  const isPublic = () =>
-    location.protocol === "https:" || /github\.io$/i.test(location.hostname);
+  const GH_RAW = "https://raw.githubusercontent.com/CheungSirEdu/sciencetool/main/";
   const shareUrl = () => SITE_URL;
 
   const state = {
     data: { items: [], photos: [], updatedAt: null, grades: [1, 2, 3, 4, 5, 6], lanUrl: "" },
     edit: false,
     local: false,
+    ghToken: sessionStorage.getItem("kit-gh") || "",
     route: { page: "home" },
     lightbox: null,
     modal: null,
     q: "",
+    saving: false,
+    dragId: null,
   };
 
-  if (!isPublic() && new URLSearchParams(location.search).get("edit") === "1") state.edit = true;
+  if (new URLSearchParams(location.search).get("edit") === "1") state.edit = true;
+  if (sessionStorage.getItem("kit-edit") === "1") state.edit = true;
 
   const view = document.getElementById("view");
   const foot = document.getElementById("foot");
@@ -47,7 +50,12 @@
     return n;
   };
 
-  const photoUrl = (name) => "photos/" + encodeURIComponent(name);
+  const photoUrl = (name) => {
+    const q = "?v=" + encodeURIComponent(state.data.updatedAt || Date.now());
+    const file = encodeURIComponent(name);
+    if (state.local) return "photos/" + file + q;
+    return GH_RAW + "photos/" + file + q;
+  };
 
   function parseHash() {
     const raw = decodeURIComponent((location.hash || "#/").replace(/^#/, ""));
@@ -63,12 +71,29 @@
     location.hash = hash;
   }
 
+  function ensureSort() {
+    const groups = new Map();
+    for (const it of state.data.items || []) {
+      const key = `${it.grade}|${it.topic || ""}`;
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(it);
+    }
+    for (const list of groups.values()) {
+      list.sort((a, b) => (a.sort ?? 9999) - (b.sort ?? 9999) || (a.name || "").localeCompare(b.name || "", "zh-Hant"));
+      list.forEach((it, i) => {
+        if (it.sort == null) it.sort = (i + 1) * 10;
+      });
+    }
+  }
+
   function itemsOf(grade, topic) {
-    return (state.data.items || []).filter((it) => {
-      if (grade && it.grade !== grade) return false;
-      if (topic && it.topic !== topic) return false;
-      return true;
-    });
+    return (state.data.items || [])
+      .filter((it) => {
+        if (grade && it.grade !== grade) return false;
+        if (topic && it.topic !== topic) return false;
+        return true;
+      })
+      .sort((a, b) => (a.sort ?? 9999) - (b.sort ?? 9999) || (a.name || "").localeCompare(b.name || "", "zh-Hant"));
   }
 
   function topicsOf(grade) {
@@ -95,10 +120,110 @@
     document.querySelectorAll(".toast").forEach((n) => n.remove());
     const n = el("div", { class: "toast", text: msg });
     document.body.append(n);
-    setTimeout(() => n.remove(), 2800);
+    setTimeout(() => n.remove(), 3200);
   }
 
-  async function api(path, opts = {}) {
+  function bytesToB64(bytes) {
+    let s = "";
+    const arr = bytes instanceof Uint8Array ? bytes : new Uint8Array(bytes);
+    const chunk = 0x8000;
+    for (let i = 0; i < arr.length; i += chunk) {
+      s += String.fromCharCode.apply(null, arr.subarray(i, i + chunk));
+    }
+    return btoa(s);
+  }
+
+  async function unlockWithPassword(password) {
+    const res = await fetch("gate.json", { cache: "no-store" });
+    if (!res.ok) throw new Error("未能載入編輯設定");
+    const gate = await res.json();
+    const salt = Uint8Array.from(atob(gate.salt), (c) => c.charCodeAt(0));
+    const enc = Uint8Array.from(atob(gate.data), (c) => c.charCodeAt(0));
+    const key = await crypto.subtle.importKey("raw", new TextEncoder().encode(password), "PBKDF2", false, ["deriveBits"]);
+    const bits = await crypto.subtle.deriveBits(
+      { name: "PBKDF2", salt, iterations: gate.iter, hash: "SHA-256" },
+      key,
+      256
+    );
+    const k = new Uint8Array(bits);
+    const raw = new Uint8Array(enc.length);
+    for (let i = 0; i < enc.length; i++) raw[i] = enc[i] ^ k[i % k.length];
+    const token = new TextDecoder().decode(raw).replace(/\0+$/g, "").trim();
+    if (!/^gh[pous]_/.test(token)) throw new Error("密碼不正確");
+    state.ghToken = token;
+    state.ghRepo = gate.repo || "CheungSirEdu/sciencetool";
+    sessionStorage.setItem("kit-gh", token);
+    sessionStorage.setItem("kit-edit", "1");
+  }
+
+  function ghHeaders() {
+    return {
+      Authorization: "Bearer " + state.ghToken,
+      Accept: "application/vnd.github+json",
+      "Content-Type": "application/json",
+    };
+  }
+
+  async function ghGet(path) {
+    const res = await fetch("https://api.github.com/repos/" + (state.ghRepo || "CheungSirEdu/sciencetool") + "/contents/" + path, {
+      headers: ghHeaders(),
+    });
+    if (res.status === 404) return null;
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.message || "讀取失敗");
+    return data;
+  }
+
+  async function ghPut(path, bytes, message) {
+    const existing = await ghGet(path);
+    const res = await fetch("https://api.github.com/repos/" + (state.ghRepo || "CheungSirEdu/sciencetool") + "/contents/" + path, {
+      method: "PUT",
+      headers: ghHeaders(),
+      body: JSON.stringify({
+        message,
+        content: bytesToB64(bytes),
+        sha: existing && existing.sha,
+        branch: "main",
+      }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) throw new Error(data.message || "儲存失敗");
+    return data;
+  }
+
+  async function persistCloud() {
+    ensureSort();
+    state.data.updatedAt = new Date().toISOString();
+    const payload = Object.assign({}, state.data, {
+      siteUrl: SITE_URL,
+      lanUrl: SITE_URL,
+    });
+    const text = JSON.stringify(payload, null, 2) + "\n";
+    await ghPut("data.json", new TextEncoder().encode(text), "更新科學教具");
+  }
+
+  async function compressImage(file) {
+    if (!file || !file.type.startsWith("image/")) return file;
+    if (file.size < 900000) return file;
+    const bitmap = await createImageBitmap(file);
+    const max = 1600;
+    let w = bitmap.width;
+    let h = bitmap.height;
+    if (w > max || h > max) {
+      const scale = max / Math.max(w, h);
+      w = Math.round(w * scale);
+      h = Math.round(h * scale);
+    }
+    const canvas = document.createElement("canvas");
+    canvas.width = w;
+    canvas.height = h;
+    canvas.getContext("2d").drawImage(bitmap, 0, 0, w, h);
+    const blob = await new Promise((resolve) => canvas.toBlob(resolve, "image/jpeg", 0.82));
+    const name = (file.name || "photo.jpg").replace(/\.[^.]+$/, "") + ".jpg";
+    return new File([blob], name, { type: "image/jpeg" });
+  }
+
+  async function localApi(path, opts = {}) {
     const res = await fetch(path, {
       headers: opts.body && !(opts.body instanceof FormData) ? { "Content-Type": "application/json" } : undefined,
       ...opts,
@@ -109,19 +234,122 @@
     return data;
   }
 
-  async function load() {
-    if (isPublic()) {
-      const res = await fetch("data.json", { cache: "no-store" });
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(data.error || "未能載入資料");
-      state.data = data;
-      state.local = false;
-      state.edit = false;
-    } else {
-      const data = await api("/api/data");
-      state.data = data;
-      state.local = true;
+  async function cloudApi(path, opts = {}) {
+    if (!state.ghToken) throw new Error("請先進入編輯模式");
+    const method = (opts.method || "GET").toUpperCase();
+    if (path === "/api/data") return state.data;
+    if (path === "/api/upload") {
+      const fd = opts.body;
+      const file = fd.get("file") || fd.get("photo");
+      if (!file) throw new Error("請選擇相片");
+      const packed = await compressImage(file);
+      const buf = new Uint8Array(await packed.arrayBuffer());
+      const safe = (packed.name || "photo.jpg").replace(/[\\/]+/g, "").replace(/^\.+/, "") || "photo.jpg";
+      const stamp = Date.now().toString(36);
+      const filename = stamp + "-" + safe;
+      await ghPut("photos/" + filename, buf, "上傳教具相片");
+      if (!state.data.photos) state.data.photos = [];
+      if (!state.data.photos.includes(filename)) state.data.photos.push(filename);
+      const itemId = fd.get("itemId");
+      let item = null;
+      if (itemId) {
+        item = (state.data.items || []).find((it) => it.id === itemId);
+        if (item) {
+          item.photos = item.photos || [];
+          if (!item.photos.includes(filename)) item.photos.push(filename);
+          item.editedOnWeb = true;
+          item.updatedAt = new Date().toISOString();
+        }
+      }
+      await persistCloud();
+      return { filename, item };
     }
+    const body = opts.body && !(opts.body instanceof FormData) ? opts.body : {};
+    if (path === "/api/items" && method === "POST") {
+      const item = {
+        id: crypto.randomUUID ? crypto.randomUUID() : String(Date.now()),
+        grade: Number(body.grade),
+        topic: (body.topic || "未分類").trim() || "未分類",
+        name: (body.name || "").trim(),
+        photos: body.photos || [],
+        source: "web",
+        editedOnWeb: true,
+        sort: body.sort != null ? Number(body.sort) : (itemsOf(Number(body.grade), body.topic).length + 1) * 10,
+        updatedAt: new Date().toISOString(),
+      };
+      state.data.items.push(item);
+      await persistCloud();
+      return { item };
+    }
+    const put = path.match(/^\/api\/items\/([^/]+)$/);
+    if (put && method === "PUT") {
+      const item = (state.data.items || []).find((it) => it.id === put[1]);
+      if (!item) throw new Error("找不到此教具");
+      if (body.grade != null) item.grade = Number(body.grade);
+      if (body.topic != null) item.topic = String(body.topic).trim() || "未分類";
+      if (body.name != null) item.name = String(body.name).trim();
+      if (body.photos != null) item.photos = body.photos;
+      if (body.sort != null) item.sort = Number(body.sort);
+      item.editedOnWeb = true;
+      item.updatedAt = new Date().toISOString();
+      await persistCloud();
+      return { item };
+    }
+    if (put && method === "DELETE") {
+      state.data.items = (state.data.items || []).filter((it) => it.id !== put[1]);
+      await persistCloud();
+      return { ok: true };
+    }
+    if (path === "/api/reorder" && method === "POST") {
+      const ids = body.ids || [];
+      const grade = Number(body.grade);
+      const topic = body.topic;
+      const list = itemsOf(grade, topic);
+      const byId = Object.fromEntries(list.map((it) => [it.id, it]));
+      ids.forEach((id, i) => {
+        if (byId[id]) {
+          byId[id].sort = (i + 1) * 10;
+          byId[id].editedOnWeb = true;
+        }
+      });
+      await persistCloud();
+      return { ok: true, data: state.data };
+    }
+    throw new Error("儲存失敗");
+  }
+
+  async function api(path, opts = {}) {
+    if (state.local) return localApi(path, opts);
+    return cloudApi(path, opts);
+  }
+
+  async function load() {
+    try {
+      const h = await fetch("/api/health", { cache: "no-store" });
+      if (h.ok) {
+        const health = await h.json();
+        if (health && health.ok) {
+          state.local = true;
+          state.data = await localApi("/api/data");
+          ensureSort();
+          afterLoad();
+          return;
+        }
+      }
+    } catch (_) {
+      /* public site */
+    }
+    let res = await fetch(GH_RAW + "data.json?t=" + Date.now(), { cache: "no-store" });
+    if (!res.ok) res = await fetch("data.json?t=" + Date.now(), { cache: "no-store" });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) throw new Error(data.error || "未能載入資料");
+    state.data = data;
+    state.local = false;
+    ensureSort();
+    afterLoad();
+  }
+
+  function afterLoad() {
     const active = document.activeElement;
     const typing = active && active.matches && active.matches(".search input");
     const qpos = typing ? [active.selectionStart, active.selectionEnd] : null;
@@ -157,9 +385,7 @@
         el("h2", { text: "選擇年級" }),
         el("p", {
           class: "hero-desc",
-          text: state.local
-            ? "一至六年級科學教具。電腦、平板、電話均用同一公開網址。進入課題後可查看實物相片。本機可按「編輯教具」更新，再執行「更新科學教具上網」。"
-            : "一至六年級科學教具。電腦、平板、電話均用同一網址。進入課題後可查看實物相片。",
+          text: "一至六年級科學教具。電腦、平板、電話均用同一網址。進入課題後可查看實物相片。按「編輯教具」可新增、影相、排序，改動會直接更新網站。",
         }),
       ]),
       el("label", { class: "search" }, [
@@ -206,7 +432,7 @@
         el("img", { class: "qr", src: "qr.png?v=" + encodeURIComponent(url), alt: "網站二維碼", width: "132", height: "132" }),
         el("div", {}, [
           el("h3", { text: "公開網址（電腦／平板／電話同一條）" }),
-          el("p", { text: "請把以下網址或二維碼分享給同事。電腦、平板、電話均開啟同一頁面，無須轉換網絡。" }),
+          el("p", { text: "請把以下網址或二維碼分享給同事。編輯後網站會即時更新。" }),
           el("div", { class: "url-row" }, [
             el("a", { class: "url-chip phone", href: url }, url),
           ]),
@@ -294,7 +520,7 @@
       el("div", { class: "hero" }, [
         el("div", {}, [
           el("h2", { text: topic }),
-          el("p", { text: items.length ? `${GRADE_LABEL[g]} · ${items.length} 件教具` : "本課題暫未有教具。" }),
+          el("p", { text: items.length ? `${GRADE_LABEL[g]} · ${items.length} 件教具${state.edit ? " · 可拖曳或按上下鍵排序" : ""}` : "本課題暫未有教具。" }),
         ]),
       ])
     );
@@ -319,7 +545,7 @@
 
   function itemGrid(items, showWhere) {
     const grid = el("div", { class: "item-grid" });
-    for (const it of items) {
+    items.forEach((it, idx) => {
       const photos = it.photos || [];
       const thumb = photos.length
         ? el("div", { class: "thumb", onclick: () => openLightbox(it, 0) }, [
@@ -332,7 +558,7 @@
             }),
           ])
         : el("div", { class: "thumb empty" }, [
-            el("div", {}, ["暫無相片", el("small", { text: "可於編輯模式上傳" })]),
+            el("div", {}, ["暫無相片", el("small", { text: "可於編輯模式影相或上傳" })]),
           ]);
       if (photos.length > 1) {
         const dots = el("div", { class: "dots" });
@@ -353,17 +579,45 @@
       if (state.edit) {
         capKids.push(
           el("div", { class: "edit-btns" }, [
-            el("button", { class: "icon-btn", type: "button", text: "編輯", onclick: () => openModal(it) }),
-            el("button", {
-              class: "icon-btn",
-              type: "button",
-              text: "刪除",
-              onclick: () => removeItem(it),
-            }),
+            el("button", { class: "icon-btn camera", type: "button", text: "影相", onclick: (e) => { e.stopPropagation(); pickPhoto(it, true); } }),
+            el("button", { class: "icon-btn", type: "button", text: "上傳", onclick: (e) => { e.stopPropagation(); pickPhoto(it, false); } }),
+            el("button", { class: "icon-btn", type: "button", text: "編輯", onclick: (e) => { e.stopPropagation(); openModal(it); } }),
+            el("button", { class: "icon-btn", type: "button", text: "刪除", onclick: (e) => { e.stopPropagation(); removeItem(it); } }),
           ])
         );
+        if (!showWhere) {
+          capKids.push(
+            el("div", { class: "sort-btns" }, [
+              el("button", { class: "icon-btn", type: "button", text: "上移", disabled: idx === 0, onclick: (e) => { e.stopPropagation(); moveItem(it, -1); } }),
+              el("button", { class: "icon-btn", type: "button", text: "下移", disabled: idx === items.length - 1, onclick: (e) => { e.stopPropagation(); moveItem(it, 1); } }),
+            ])
+          );
+        }
       }
-      const card = el("article", { class: "item-card" }, [thumb, el("div", { class: "cap" }, capKids)]);
+      const card = el("article", { class: "item-card" + (state.edit && !showWhere ? " can-drag" : ""), "data-id": it.id }, [thumb, el("div", { class: "cap" }, capKids)]);
+      if (state.edit && !showWhere) {
+        card.draggable = true;
+        card.addEventListener("dragstart", (e) => {
+          state.dragId = it.id;
+          card.classList.add("dragging");
+          e.dataTransfer.effectAllowed = "move";
+        });
+        card.addEventListener("dragend", () => {
+          state.dragId = null;
+          card.classList.remove("dragging");
+        });
+        card.addEventListener("dragover", (e) => {
+          e.preventDefault();
+          card.classList.add("drag-over");
+        });
+        card.addEventListener("dragleave", () => card.classList.remove("drag-over"));
+        card.addEventListener("drop", (e) => {
+          e.preventDefault();
+          card.classList.remove("drag-over");
+          if (!state.dragId || state.dragId === it.id) return;
+          dropReorder(state.dragId, it.id);
+        });
+      }
       if (showWhere) {
         card.style.cursor = "pointer";
         card.addEventListener("click", (e) => {
@@ -372,8 +626,70 @@
         });
       }
       grid.append(card);
-    }
+    });
     return grid;
+  }
+
+  async function saveOrder(grade, topic) {
+    const ids = itemsOf(grade, topic).map((it) => it.id);
+    await api("/api/reorder", { method: "POST", body: { grade, topic, ids } });
+    if (state.local) await load();
+    else render();
+    toast("順序已更新，網站正在更新");
+  }
+
+  async function moveItem(it, dir) {
+    const list = itemsOf(it.grade, it.topic);
+    const i = list.findIndex((x) => x.id === it.id);
+    const j = i + dir;
+    if (i < 0 || j < 0 || j >= list.length) return;
+    const a = list[i].sort ?? (i + 1) * 10;
+    const b = list[j].sort ?? (j + 1) * 10;
+    list[i].sort = b;
+    list[j].sort = a;
+    try {
+      await saveOrder(it.grade, it.topic);
+    } catch (err) {
+      toast(err.message);
+    }
+  }
+
+  async function dropReorder(fromId, toId) {
+    const to = (state.data.items || []).find((x) => x.id === toId);
+    if (!to) return;
+    const list = itemsOf(to.grade, to.topic);
+    const fromIdx = list.findIndex((x) => x.id === fromId);
+    const toIdx = list.findIndex((x) => x.id === toId);
+    if (fromIdx < 0 || toIdx < 0) return;
+    const [moved] = list.splice(fromIdx, 1);
+    list.splice(toIdx, 0, moved);
+    list.forEach((it, i) => { it.sort = (i + 1) * 10; });
+    try {
+      await saveOrder(to.grade, to.topic);
+    } catch (err) {
+      toast(err.message);
+    }
+  }
+
+  function pickPhoto(item, camera) {
+    const input = el("input", { type: "file", accept: "image/*" });
+    if (camera) input.setAttribute("capture", "environment");
+    input.addEventListener("change", async () => {
+      if (!input.files[0]) return;
+      try {
+        toast(camera ? "正在上傳相片…" : "正在上傳…");
+        const fd = new FormData();
+        fd.append("file", input.files[0]);
+        fd.append("itemId", item.id);
+        await api("/api/upload", { method: "POST", body: fd });
+        if (state.local) await load();
+        else render();
+        toast("相片已更新到網站");
+      } catch (err) {
+        toast(err.message);
+      }
+    });
+    input.click();
   }
 
   function openLightbox(item, idx) {
@@ -475,22 +791,27 @@
       photoPick.append(lab);
     }
 
-    const file = el("input", { type: "file", accept: "image/*" });
-    file.addEventListener("change", async () => {
-      if (!file.files[0]) return;
+    const camera = el("input", { type: "file", accept: "image/*" });
+    camera.setAttribute("capture", "environment");
+    const album = el("input", { type: "file", accept: "image/*" });
+    const onFile = async (file) => {
+      if (!file) return;
       try {
+        toast("正在上傳相片…");
         const fd = new FormData();
-        fd.append("file", file.files[0]);
+        fd.append("file", file);
         if (m.id) fd.append("itemId", m.id);
         const out = await api("/api/upload", { method: "POST", body: fd });
         if (!m.photos.includes(out.filename)) m.photos.push(out.filename);
-        await load();
+        if (state.local) await load();
         toast("相片已上傳");
         drawModal();
       } catch (err) {
         toast(err.message);
       }
-    });
+    };
+    camera.addEventListener("change", () => onFile(camera.files[0]));
+    album.addEventListener("change", () => onFile(album.files[0]));
 
     const back = el("div", { class: "modal-back" }, [
       el("div", { class: "modal" }, [
@@ -538,9 +859,12 @@
           }),
         ]),
         el("div", { class: "field" }, [
-          el("span", { text: "相片（可選擇現有相片或上傳新相片，可選多張）" }),
+          el("span", { text: "相片（電話可即場影相；電腦可上傳）" }),
           photoPick,
-          file,
+          el("div", { class: "photo-actions" }, [
+            el("button", { class: "btn primary", type: "button", text: "影相", onclick: () => camera.click() }),
+            el("button", { class: "btn", type: "button", text: "從相簿／檔案", onclick: () => album.click() }),
+          ]),
         ]),
         el("div", { class: "modal-actions" }, [
           el("button", { class: "btn", type: "button", text: "取消", onclick: () => { state.modal = null; drawModal(); } }),
@@ -569,8 +893,9 @@
       else await api("/api/items", { method: "POST", body: payload });
       state.modal = null;
       drawModal();
-      await load();
-      toast("已儲存");
+      if (state.local) await load();
+      else render();
+      toast("已儲存，網站正在更新");
     } catch (err) {
       toast(err.message);
     }
@@ -580,21 +905,77 @@
     if (!confirm(`確定刪除「${it.name}」？`)) return;
     try {
       await api("/api/items/" + it.id, { method: "DELETE" });
-      await load();
-      toast("已刪除");
+      if (state.local) await load();
+      else render();
+      toast("已刪除，網站正在更新");
     } catch (err) {
       toast(err.message);
     }
   }
 
+  function askPassword() {
+    return new Promise((resolve) => {
+      const input = el("input", { type: "password", placeholder: "編輯密碼", autocomplete: "current-password" });
+      const back = el("div", { class: "modal-back" }, [
+        el("div", { class: "modal" }, [
+          el("h3", { text: "進入編輯模式" }),
+          el("p", { class: "hero-desc", text: "同事可新增教具、影相上傳、調整順序。改動會直接更新公開網站。" }),
+          el("label", { class: "field" }, [el("span", { text: "密碼" }), input]),
+          el("div", { class: "modal-actions" }, [
+            el("button", { class: "btn", type: "button", text: "取消", onclick: () => { back.remove(); resolve(null); } }),
+            el("button", {
+              class: "btn primary",
+              type: "button",
+              text: "開始編輯",
+              onclick: () => {
+                const v = input.value;
+                back.remove();
+                resolve(v);
+              },
+            }),
+          ]),
+        ]),
+      ]);
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          const v = input.value;
+          back.remove();
+          resolve(v);
+        }
+      });
+      document.body.append(back);
+      setTimeout(() => input.focus(), 50);
+    });
+  }
+
+  async function toggleEdit() {
+    if (state.edit) {
+      state.edit = false;
+      render();
+      return;
+    }
+    if (!state.local && !state.ghToken) {
+      const pw = await askPassword();
+      if (pw == null) return;
+      try {
+        await unlockWithPassword(pw);
+      } catch (err) {
+        toast(err.message || "密碼不正確");
+        return;
+      }
+    }
+    state.edit = true;
+    sessionStorage.setItem("kit-edit", "1");
+    render();
+  }
+
   function render() {
     state.route = parseHash();
-    if (!state.local) state.edit = false;
     document.body.classList.toggle("editing", state.edit);
-    btnEdit.hidden = !state.local;
+    btnEdit.hidden = false;
     btnReload.hidden = !state.local;
     const actions = document.querySelector(".top-actions");
-    if (actions) actions.hidden = !state.local;
+    if (actions) actions.hidden = false;
     const editFull = state.edit ? "完成編輯" : "編輯教具";
     const editShort = state.edit ? "完成" : "編輯";
     btnEdit.replaceChildren(
@@ -614,11 +995,7 @@
     );
   }
 
-  btnEdit.addEventListener("click", () => {
-    if (!state.local) return;
-    state.edit = !state.edit;
-    render();
-  });
+  btnEdit.addEventListener("click", () => { toggleEdit(); });
   btnReload.addEventListener("click", async () => {
     if (!state.local) return;
     try {
@@ -634,7 +1011,8 @@
   let lastStamp = null;
   async function poll() {
     try {
-      const h = await api("/api/health");
+      if (!state.local) return;
+      const h = await localApi("/api/health");
       if (lastStamp && h.updatedAt && h.updatedAt !== lastStamp) {
         await load();
         toast("教具表已更新");
@@ -657,5 +1035,5 @@
         ])
       );
     });
-  if (!isPublic()) setInterval(poll, 8000);
+  setInterval(poll, 8000);
 })();
