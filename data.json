@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:13:33.926Z",
+  "updatedAt": "2026-09-08T08:13:56.016Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -597,10 +597,12 @@
       "grade": 4,
       "topic": "11. 能源",
       "name": "計時器",
-      "photos": [],
+      "photos": [
+        "mtse444a-image.jpg"
+      ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:13:56.015Z",
       "sort": 20
     },
     {
