@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:49:32.515Z",
+  "updatedAt": "2026-09-08T08:50:13.929Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -275,10 +275,12 @@
       "grade": 2,
       "topic": "7. 溶解於水",
       "name": "計時器",
-      "photos": [],
+      "photos": [
+        "mtse444a-image.jpg"
+      ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:50:13.928Z",
       "sort": 10
     },
     {
