@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:38:33.239Z",
+  "updatedAt": "2026-09-08T08:38:53.919Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -1161,10 +1161,12 @@
       "grade": 5,
       "topic": "15.噪音的形成和應對",
       "name": "分貝儀",
-      "photos": [],
+      "photos": [
+        "mtsf3zdy-image.jpg"
+      ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:38:53.919Z",
       "sort": 10
     },
     {
@@ -1359,7 +1361,8 @@
     "mtsf1bhd-image.jpg",
     "mtsf2tz6-image.jpg",
     "mtsf3cjc-image.jpg",
-    "mtsf3jgj-image.jpg"
+    "mtsf3jgj-image.jpg",
+    "mtsf3zdy-image.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
