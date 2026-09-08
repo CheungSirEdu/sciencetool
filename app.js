@@ -8,7 +8,7 @@
     6: "六年級",
   };
   const CHINESE_NUM = { 1: "一", 2: "二", 3: "三", 4: "四", 5: "五", 6: "六" };
-  const SITE_URL = "https://cheungsiredu.github.io/science-kits/";
+  const SITE_URL = "https://cheungsiredu.github.io/sciencetool/";
   const isPublic = () =>
     location.protocol === "https:" || /github\.io$/i.test(location.hostname);
   const shareUrl = () => SITE_URL;
