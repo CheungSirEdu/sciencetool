@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:17:55.736Z",
+  "updatedAt": "2026-09-08T08:18:03.943Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -674,12 +674,11 @@
       "topic": "13. 金屬和非金屬",
       "name": "鋁棒",
       "photos": [
-        "mtseciaa-image.jpg",
         "mtsed0jc-image.jpg"
       ],
       "source": "excel",
       "editedOnWeb": true,
-      "updatedAt": "2026-09-08T08:17:55.736Z",
+      "updatedAt": "2026-09-08T08:18:03.943Z",
       "sort": 60
     },
     {
