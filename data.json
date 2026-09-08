@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:23:19.999Z",
+  "updatedAt": "2026-09-08T08:23:29.346Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -1162,6 +1162,19 @@
       "editedOnWeb": true,
       "sort": 50,
       "updatedAt": "2026-09-08T08:22:26.888Z"
+    },
+    {
+      "id": "ac798e64-15bf-4804-9db6-52e708918a41",
+      "grade": 4,
+      "topic": "15. 光的特性",
+      "name": "凸凹透鏡",
+      "photos": [
+        "mtsejua3-image.jpg"
+      ],
+      "source": "web",
+      "editedOnWeb": true,
+      "sort": 60,
+      "updatedAt": "2026-09-08T08:23:29.346Z"
     }
   ],
   "photos": [
