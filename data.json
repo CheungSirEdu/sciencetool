@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:48:32.343Z",
+  "updatedAt": "2026-09-08T08:49:18.282Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -249,10 +249,12 @@
       "grade": 2,
       "topic": "7. 溶解於水",
       "name": "攪拌棒",
-      "photos": [],
+      "photos": [
+        "mtsfhcnm-image.jpg"
+      ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:49:18.282Z",
       "sort": 40
     },
     {
@@ -1345,7 +1347,8 @@
     "mtseyby7-image.jpg",
     "mtsf6wdp-image.jpg",
     "mtsf9u4s-image.jpg",
-    "mtsfgdf3-image.jpg"
+    "mtsfgdf3-image.jpg",
+    "mtsfhcnm-image.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
