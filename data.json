@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T07:59:41.517Z",
+  "updatedAt": "2026-09-08T08:00:11.224Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -28,10 +28,12 @@
       "grade": 1,
       "topic": "3. 植物知多少",
       "name": "棉花",
-      "photos": [],
+      "photos": [
+        "mtsdq66n-image.jpg"
+      ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:00:11.221Z",
       "sort": 20
     },
     {
@@ -1114,7 +1116,8 @@
     "音叉.jpeg",
     "風力車.jpeg",
     "骨骼模型.jpeg",
-    "mtsdpkd0-image.jpg"
+    "mtsdpkd0-image.jpg",
+    "mtsdq66n-image.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
