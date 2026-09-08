@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:01:04.384Z",
+  "updatedAt": "2026-09-08T08:01:29.913Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -54,10 +54,12 @@
       "grade": 1,
       "topic": "6. 我們的地球",
       "name": "充氣地球",
-      "photos": [],
+      "photos": [
+        "mtsdrvkt-image.jpg"
+      ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:01:29.913Z",
       "sort": 10
     },
     {
@@ -1118,7 +1120,8 @@
     "骨骼模型.jpeg",
     "mtsdpkd0-image.jpg",
     "mtsdq66n-image.jpg",
-    "mtsdqqpc-image.jpg"
+    "mtsdqqpc-image.jpg",
+    "mtsdrvkt-image.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
