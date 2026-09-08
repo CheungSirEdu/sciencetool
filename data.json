@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:03:19.106Z",
+  "updatedAt": "2026-09-08T08:04:16.829Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -120,10 +120,12 @@
       "grade": 1,
       "topic": "11. 光和影",
       "name": "電筒",
-      "photos": [],
+      "photos": [
+        "mtsdvga9-image.jpg"
+      ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:04:16.829Z",
       "sort": 30
     },
     {
@@ -1132,7 +1134,8 @@
     "mtsdshb8-image.jpg",
     "mtsdtkzd-image.jpg",
     "mtsdu1n1-image.jpg",
-    "mtsdu86d-image.jpg"
+    "mtsdu86d-image.jpg",
+    "mtsdvga9-image.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
