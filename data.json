@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:06:30.397Z",
+  "updatedAt": "2026-09-08T08:07:21.508Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -133,10 +133,12 @@
       "grade": 2,
       "topic": "3. 動手種植物",
       "name": "攪拌棒",
-      "photos": [],
+      "photos": [
+        "mtsdzei1-image.jpg"
+      ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:07:21.508Z",
       "sort": 60
     },
     {
@@ -1145,7 +1147,8 @@
     "mtsdvga9-image.jpg",
     "mtsdwc7q-image.jpg",
     "mtsdxs82-image.jpg",
-    "mtsdybdu-image.jpg"
+    "mtsdybdu-image.jpg",
+    "mtsdzei1-image.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
