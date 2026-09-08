@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:45:14.563Z",
+  "updatedAt": "2026-09-08T08:45:22.535Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -1266,19 +1266,6 @@
       "editedOnWeb": true,
       "sort": 40,
       "updatedAt": "2026-09-08T08:45:07.935Z"
-    },
-    {
-      "id": "03ceb526-33e1-4b37-a0d2-11da2e897e1d",
-      "grade": 2,
-      "topic": "5. 天氣與我",
-      "name": "自製指南針",
-      "photos": [
-        "mtsfbzdp-image.jpg"
-      ],
-      "source": "web",
-      "editedOnWeb": true,
-      "sort": 50,
-      "updatedAt": "2026-09-08T08:45:14.562Z"
     }
   ],
   "photos": [
