@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:46:05.536Z",
+  "updatedAt": "2026-09-08T08:46:24.571Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -330,10 +330,12 @@
       "grade": 2,
       "topic": "9.磁鐵的特性",
       "name": "磁鐵",
-      "photos": [],
+      "photos": [
+        "mtsfdmxc-image.jpg"
+      ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:46:24.571Z",
       "sort": 10
     },
     {
@@ -1357,7 +1359,8 @@
     "mtsf6wdp-image.jpg",
     "mtsf9u4s-image.jpg",
     "mtsfbzdp-image.jpg",
-    "mtsfd1gn-image.jpg"
+    "mtsfd1gn-image.jpg",
+    "mtsfdmxc-image.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
