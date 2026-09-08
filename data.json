@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:34:47.397Z",
+  "updatedAt": "2026-09-08T08:35:19.228Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -1070,10 +1070,12 @@
       "grade": 5,
       "topic": "10.天氣",
       "name": "量杯",
-      "photos": [],
+      "photos": [
+        "mtseu1qd-image.jpg"
+      ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:35:19.227Z",
       "sort": 40
     },
     {
