@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:05:32.212Z",
+  "updatedAt": "2026-09-08T08:05:46.179Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -162,7 +162,7 @@
       ],
       "source": "excel",
       "editedOnWeb": true,
-      "updatedAt": "2026-09-08T08:05:32.211Z",
+      "updatedAt": "2026-09-08T08:05:34.012Z",
       "sort": 30
     },
     {
@@ -171,11 +171,11 @@
       "topic": "3. 動手種植物",
       "name": "綠豆",
       "photos": [
-        "插頭、蜂鳴器、綠豆、蜻蜓.jpeg"
+        "mtsdqqpc-image.jpg"
       ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:05:46.179Z",
       "sort": 40
     },
     {
