@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:24:13.353Z",
+  "updatedAt": "2026-09-08T08:24:19.797Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -1188,6 +1188,19 @@
       "editedOnWeb": true,
       "sort": 70,
       "updatedAt": "2026-09-08T08:23:30.147Z"
+    },
+    {
+      "id": "7147c1b6-2475-44c9-8f9f-b6c508dc0bbb",
+      "grade": 4,
+      "topic": "15. 光的特性",
+      "name": "可磁吸激光筆",
+      "photos": [
+        "mtsekt8d-image.jpg"
+      ],
+      "source": "web",
+      "editedOnWeb": true,
+      "sort": 80,
+      "updatedAt": "2026-09-08T08:24:19.797Z"
     }
   ],
   "photos": [
