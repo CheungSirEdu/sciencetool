@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:54:02.643Z",
+  "updatedAt": "2026-09-08T08:54:16.528Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -1274,19 +1274,6 @@
       "editedOnWeb": true,
       "sort": 40,
       "updatedAt": "2026-09-08T08:53:57.258Z"
-    },
-    {
-      "id": "fdc96c81-0a9f-4968-bb68-5cad587ea3fd",
-      "grade": 2,
-      "topic": "5. 天氣與我",
-      "name": "司南",
-      "photos": [
-        "mtsfnbn0-image.jpg"
-      ],
-      "source": "web",
-      "editedOnWeb": true,
-      "sort": 50,
-      "updatedAt": "2026-09-08T08:54:02.643Z"
     }
   ],
   "photos": [
