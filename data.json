@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:37:26.264Z",
+  "updatedAt": "2026-09-08T08:38:00.263Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -1134,11 +1134,12 @@
       "topic": "12.能量的轉換",
       "name": "組裝太陽能風扇套件",
       "photos": [
-        "太陽能風扇.jpeg"
+        "太陽能風扇.jpeg",
+        "mtsf2tz6-image.jpg"
       ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:38:00.263Z",
       "sort": 10
     },
     {
@@ -1352,7 +1353,8 @@
     "mtsewtmt-image.jpg",
     "mtsexg9t-image.jpg",
     "mtseyby7-image.jpg",
-    "mtsf1bhd-image.jpg"
+    "mtsf1bhd-image.jpg",
+    "mtsf2tz6-image.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
