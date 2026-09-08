@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:00:37.194Z",
+  "updatedAt": "2026-09-08T08:01:04.384Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -42,12 +42,11 @@
       "topic": "3. 植物知多少",
       "name": "綠豆",
       "photos": [
-        "插頭、蜂鳴器、綠豆、蜻蜓.jpeg",
         "mtsdqqpc-image.jpg"
       ],
       "source": "excel",
       "editedOnWeb": true,
-      "updatedAt": "2026-09-08T08:00:37.193Z",
+      "updatedAt": "2026-09-08T08:01:04.384Z",
       "sort": 30
     },
     {
