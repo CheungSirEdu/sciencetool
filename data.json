@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:39:20.038Z",
+  "updatedAt": "2026-09-08T08:41:10.435Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -1109,12 +1109,10 @@
       "grade": 5,
       "topic": "11.力和反作用力",
       "name": "彈簧秤",
-      "photos": [
-        "mtsem0yu-image.jpg"
-      ],
+      "photos": [],
       "source": "excel",
-      "editedOnWeb": true,
-      "updatedAt": "2026-09-08T08:37:26.263Z",
+      "editedOnWeb": false,
+      "updatedAt": "2026-09-08T07:51:57+08:00",
       "sort": 30
     },
     {
@@ -1134,12 +1132,11 @@
       "topic": "12.能量的轉換",
       "name": "組裝太陽能風扇套件",
       "photos": [
-        "太陽能風扇.jpeg",
-        "mtsf2tz6-image.jpg"
+        "太陽能風扇.jpeg"
       ],
       "source": "excel",
-      "editedOnWeb": true,
-      "updatedAt": "2026-09-08T08:38:00.263Z",
+      "editedOnWeb": false,
+      "updatedAt": "2026-09-08T07:51:57+08:00",
       "sort": 10
     },
     {
@@ -1147,13 +1144,10 @@
       "grade": 5,
       "topic": "14.聲音的特性",
       "name": "八弦琴",
-      "photos": [
-        "mtsf3cjc-image.jpg",
-        "mtsf3jgj-image.jpg"
-      ],
+      "photos": [],
       "source": "excel",
-      "editedOnWeb": true,
-      "updatedAt": "2026-09-08T08:38:33.239Z",
+      "editedOnWeb": false,
+      "updatedAt": "2026-09-08T07:51:57+08:00",
       "sort": 10
     },
     {
@@ -1161,12 +1155,10 @@
       "grade": 5,
       "topic": "15.噪音的形成和應對",
       "name": "分貝儀",
-      "photos": [
-        "mtsf3zdy-image.jpg"
-      ],
+      "photos": [],
       "source": "excel",
-      "editedOnWeb": true,
-      "updatedAt": "2026-09-08T08:38:53.919Z",
+      "editedOnWeb": false,
+      "updatedAt": "2026-09-08T07:51:57+08:00",
       "sort": 10
     },
     {
@@ -1174,12 +1166,10 @@
       "grade": 5,
       "topic": "15.噪音的形成和應對",
       "name": "隔音耳罩測試",
-      "photos": [
-        "mtsf4j2b-image.jpg"
-      ],
+      "photos": [],
       "source": "excel",
-      "editedOnWeb": true,
-      "updatedAt": "2026-09-08T08:39:20.037Z",
+      "editedOnWeb": false,
+      "updatedAt": "2026-09-08T07:51:57+08:00",
       "sort": 20
     },
     {
@@ -1259,19 +1249,6 @@
       "editedOnWeb": true,
       "sort": 100,
       "updatedAt": "2026-09-08T08:29:12.258Z"
-    },
-    {
-      "id": "5840b0ca-2603-4012-81f2-826e829d9e42",
-      "grade": 5,
-      "topic": "10.天氣",
-      "name": "模擬雲和霧的形成",
-      "photos": [
-        "mtsf1bhd-image.jpg"
-      ],
-      "source": "web",
-      "editedOnWeb": true,
-      "sort": 60,
-      "updatedAt": "2026-09-08T08:36:56.348Z"
     }
   ],
   "photos": [
@@ -1360,12 +1337,7 @@
     "mtsewtmt-image.jpg",
     "mtsexg9t-image.jpg",
     "mtseyby7-image.jpg",
-    "mtsf1bhd-image.jpg",
-    "mtsf2tz6-image.jpg",
-    "mtsf3cjc-image.jpg",
-    "mtsf3jgj-image.jpg",
-    "mtsf3zdy-image.jpg",
-    "mtsf4j2b-image.jpg"
+    "mtsf6wdp-image.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
