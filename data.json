@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:45:22.535Z",
+  "updatedAt": "2026-09-08T08:45:56.599Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -355,11 +355,12 @@
       "topic": "12.奇思妙想",
       "name": "蜻蜓標本",
       "photos": [
-        "插頭、蜂鳴器、綠豆、蜻蜓.jpeg"
+        "插頭、蜂鳴器、綠豆、蜻蜓.jpeg",
+        "mtsfd1gn-image.jpg"
       ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:45:56.598Z",
       "sort": 20
     },
     {
@@ -1356,7 +1357,8 @@
     "mtseyby7-image.jpg",
     "mtsf6wdp-image.jpg",
     "mtsf9u4s-image.jpg",
-    "mtsfbzdp-image.jpg"
+    "mtsfbzdp-image.jpg",
+    "mtsfd1gn-image.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
