@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:15:28.954Z",
+  "updatedAt": "2026-09-08T08:15:36.566Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -647,10 +647,12 @@
       "grade": 4,
       "topic": "13. 金屬和非金屬",
       "name": "塑料棒",
-      "photos": [],
+      "photos": [
+        "mtsea0tn-image.jpg"
+      ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:15:36.566Z",
       "sort": 50
     },
     {
@@ -1193,7 +1195,8 @@
     "mtse7eia-image.jpg",
     "mtse97u2-image.jpg",
     "mtse9dy7-image.jpg",
-    "mtse9uzt-image.jpg"
+    "mtse9uzt-image.jpg",
+    "mtsea0tn-image.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
