@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:41:10.435Z",
+  "updatedAt": "2026-09-08T08:41:31.684Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -212,10 +212,12 @@
       "grade": 2,
       "topic": "5. 天氣與我",
       "name": "紙杯",
-      "photos": [],
+      "photos": [
+        "杯.jpeg"
+      ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:41:31.684Z",
       "sort": 20
     },
     {
