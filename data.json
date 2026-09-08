@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:47:03.143Z",
+  "updatedAt": "2026-09-08T08:48:32.343Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -330,10 +330,12 @@
       "grade": 2,
       "topic": "9.磁鐵的特性",
       "name": "磁鐵",
-      "photos": [],
+      "photos": [
+        "mtsfgdf3-image.jpg"
+      ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:48:32.342Z",
       "sort": 10
     },
     {
@@ -1253,17 +1255,6 @@
       "editedOnWeb": true,
       "sort": 100,
       "updatedAt": "2026-09-08T08:29:12.258Z"
-    },
-    {
-      "id": "c396260c-b77f-4eb5-a8b5-3fe8e70bbb78",
-      "grade": 2,
-      "topic": "5. 天氣與我",
-      "name": "司南",
-      "photos": [],
-      "source": "web",
-      "editedOnWeb": true,
-      "sort": 40,
-      "updatedAt": "2026-09-08T08:47:03.143Z"
     }
   ],
   "photos": [
@@ -1354,7 +1345,7 @@
     "mtseyby7-image.jpg",
     "mtsf6wdp-image.jpg",
     "mtsf9u4s-image.jpg",
-    "mtsfege2-image.jpg"
+    "mtsfgdf3-image.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
