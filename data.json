@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:36:56.349Z",
+  "updatedAt": "2026-09-08T08:37:26.264Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -1109,10 +1109,12 @@
       "grade": 5,
       "topic": "11.力和反作用力",
       "name": "彈簧秤",
-      "photos": [],
+      "photos": [
+        "mtsem0yu-image.jpg"
+      ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:37:26.263Z",
       "sort": 30
     },
     {
