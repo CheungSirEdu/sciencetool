@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:24:46.684Z",
+  "updatedAt": "2026-09-08T08:24:56.632Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -801,10 +801,12 @@
       "grade": 4,
       "topic": "16. 摩擦力",
       "name": "彈簧秤",
-      "photos": [],
+      "photos": [
+        "mtsem0yu-image.jpg"
+      ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:24:56.631Z",
       "sort": 30
     },
     {
@@ -1279,7 +1281,8 @@
     "mtseilrx-image.jpg",
     "mtsejua3-image.jpg",
     "mtsekt8d-image.jpg",
-    "mtselr3p-image.jpg"
+    "mtselr3p-image.jpg",
+    "mtsem0yu-image.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
