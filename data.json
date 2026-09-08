@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:20:03.958Z",
+  "updatedAt": "2026-09-08T08:20:30.261Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -760,10 +760,12 @@
       "grade": 4,
       "topic": "15. 光的特性",
       "name": "電筒",
-      "photos": [],
+      "photos": [
+        "mtsegb74-image.jpg"
+      ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:20:30.261Z",
       "sort": 20
     },
     {
@@ -771,10 +773,12 @@
       "grade": 4,
       "topic": "15. 光的特性",
       "name": "魚尾夾",
-      "photos": [],
+      "photos": [
+        "mtsefqsk-image.jpg"
+      ],
       "source": "excel",
       "editedOnWeb": true,
-      "updatedAt": "2026-09-08T08:20:03.957Z",
+      "updatedAt": "2026-09-08T08:20:08.748Z",
       "sort": 10
     },
     {
@@ -1209,7 +1213,9 @@
     "mtseciaa-image.jpg",
     "mtsecoyh-image.jpg",
     "mtsed0jc-image.jpg",
-    "mtseedm8-image.jpg"
+    "mtseedm8-image.jpg",
+    "mtsefqsk-image.jpg",
+    "mtsegb74-image.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
