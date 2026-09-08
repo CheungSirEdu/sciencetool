@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:33:49.592Z",
+  "updatedAt": "2026-09-08T08:34:30.863Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -1058,11 +1058,12 @@
       "topic": "10.天氣",
       "name": "製作風向儀套件",
       "photos": [
-        "自製指南針、方向儀.jpeg"
+        "自製指南針、方向儀.jpeg",
+        "mtseyby7-image.jpg"
       ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:34:30.863Z",
       "sort": 50
     },
     {
@@ -1334,7 +1335,8 @@
     "mtseu1qd-image.jpg",
     "mtsev9tb-image.jpg",
     "mtsewtmt-image.jpg",
-    "mtsexg9t-image.jpg"
+    "mtsexg9t-image.jpg",
+    "mtseyby7-image.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
