@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:11:58.913Z",
+  "updatedAt": "2026-09-08T08:12:06.024Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -483,12 +483,11 @@
       "topic": "2. 轉動的地球",
       "name": "指南針",
       "photos": [
-        "自製指南針、方向儀.jpeg",
         "mtse5cig-image.jpg"
       ],
       "source": "excel",
       "editedOnWeb": true,
-      "updatedAt": "2026-09-08T08:11:58.913Z",
+      "updatedAt": "2026-09-08T08:12:06.024Z",
       "sort": 10
     },
     {
