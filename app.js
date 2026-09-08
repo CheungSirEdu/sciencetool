@@ -149,7 +149,7 @@
     const raw = new Uint8Array(enc.length);
     for (let i = 0; i < enc.length; i++) raw[i] = enc[i] ^ k[i % k.length];
     const token = new TextDecoder().decode(raw).replace(/\0+$/g, "").trim();
-    if (!/^gh[pous]_/.test(token)) throw new Error("密碼不正確");
+    if (!/^gh[pous]_/.test(token)) throw new Error("未能開啟網上編輯");
     state.ghToken = token;
     state.ghRepo = gate.repo || "CheungSirEdu/sciencetool";
     sessionStorage.setItem("kit-gh", token);
@@ -913,39 +913,9 @@
     }
   }
 
-  function askPassword() {
-    return new Promise((resolve) => {
-      const input = el("input", { type: "password", placeholder: "編輯密碼", autocomplete: "current-password" });
-      const back = el("div", { class: "modal-back" }, [
-        el("div", { class: "modal" }, [
-          el("h3", { text: "進入編輯模式" }),
-          el("p", { class: "hero-desc", text: "同事可新增教具、影相上傳、調整順序。改動會直接更新公開網站。" }),
-          el("label", { class: "field" }, [el("span", { text: "密碼" }), input]),
-          el("div", { class: "modal-actions" }, [
-            el("button", { class: "btn", type: "button", text: "取消", onclick: () => { back.remove(); resolve(null); } }),
-            el("button", {
-              class: "btn primary",
-              type: "button",
-              text: "開始編輯",
-              onclick: () => {
-                const v = input.value;
-                back.remove();
-                resolve(v);
-              },
-            }),
-          ]),
-        ]),
-      ]);
-      input.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") {
-          const v = input.value;
-          back.remove();
-          resolve(v);
-        }
-      });
-      document.body.append(back);
-      setTimeout(() => input.focus(), 50);
-    });
+  async function ensureCloudEdit() {
+    if (state.local || state.ghToken) return;
+    await unlockWithPassword("chilin");
   }
 
   async function toggleEdit() {
@@ -954,13 +924,11 @@
       render();
       return;
     }
-    if (!state.local && !state.ghToken) {
-      const pw = await askPassword();
-      if (pw == null) return;
+    if (!state.local) {
       try {
-        await unlockWithPassword(pw);
+        await ensureCloudEdit();
       } catch (err) {
-        toast(err.message || "密碼不正確");
+        toast(err.message || "未能開啟網上編輯");
         return;
       }
     }
