@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:11:01.014Z",
+  "updatedAt": "2026-09-08T08:11:28.224Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -469,10 +469,12 @@
       "grade": 4,
       "topic": "1. 地球的結構",
       "name": "電子秤",
-      "photos": [],
+      "photos": [
+        "mtse4pbr-image.jpg"
+      ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:11:28.223Z",
       "sort": 60
     },
     {
@@ -1167,7 +1169,8 @@
     "mtse1ffa-image.jpg",
     "mtse1xaj-image.jpg",
     "mtse2crp-image.jpg",
-    "mtse444a-image.jpg"
+    "mtse444a-image.jpg",
+    "mtse4pbr-image.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
