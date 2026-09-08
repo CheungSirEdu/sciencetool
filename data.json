@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:08:55.422Z",
+  "updatedAt": "2026-09-08T08:09:18.052Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -391,11 +391,12 @@
       "topic": "1. 地球的結構",
       "name": "岩石標本(3大類)",
       "photos": [
-        "mtse10jl-image.jpg"
+        "mtse10jl-image.jpg",
+        "mtse1xaj-image.jpg"
       ],
       "source": "excel",
       "editedOnWeb": true,
-      "updatedAt": "2026-09-08T08:08:35.884Z",
+      "updatedAt": "2026-09-08T08:09:18.051Z",
       "sort": 30
     },
     {
@@ -1157,7 +1158,8 @@
     "mtsdzei1-image.jpg",
     "mtse0n63-image.jpg",
     "mtse10jl-image.jpg",
-    "mtse1ffa-image.jpg"
+    "mtse1ffa-image.jpg",
+    "mtse1xaj-image.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
