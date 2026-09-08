@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:24:19.797Z",
+  "updatedAt": "2026-09-08T08:24:46.684Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -812,10 +812,12 @@
       "grade": 4,
       "topic": "16. 摩擦力",
       "name": "金屬砝碼",
-      "photos": [],
+      "photos": [
+        "mtselr3p-image.jpg"
+      ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:24:46.683Z",
       "sort": 20
     },
     {
@@ -1276,7 +1278,8 @@
     "mtseh5gj-image.jpg",
     "mtseilrx-image.jpg",
     "mtsejua3-image.jpg",
-    "mtsekt8d-image.jpg"
+    "mtsekt8d-image.jpg",
+    "mtselr3p-image.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
