@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:05:46.179Z",
+  "updatedAt": "2026-09-08T08:06:05.714Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -171,11 +171,12 @@
       "topic": "3. 動手種植物",
       "name": "綠豆",
       "photos": [
-        "mtsdqqpc-image.jpg"
+        "mtsdqqpc-image.jpg",
+        "mtsdxs82-image.jpg"
       ],
       "source": "excel",
       "editedOnWeb": true,
-      "updatedAt": "2026-09-08T08:05:46.179Z",
+      "updatedAt": "2026-09-08T08:06:05.713Z",
       "sort": 40
     },
     {
@@ -1140,7 +1141,8 @@
     "mtsdu1n1-image.jpg",
     "mtsdu86d-image.jpg",
     "mtsdvga9-image.jpg",
-    "mtsdwc7q-image.jpg"
+    "mtsdwc7q-image.jpg",
+    "mtsdxs82-image.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
