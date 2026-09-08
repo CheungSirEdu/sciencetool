@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:04:16.829Z",
+  "updatedAt": "2026-09-08T08:04:58.394Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -192,10 +192,12 @@
       "grade": 2,
       "topic": "3. 動手種植物",
       "name": "色素",
-      "photos": [],
+      "photos": [
+        "mtsdwc7q-image.jpg"
+      ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:04:58.394Z",
       "sort": 10
     },
     {
@@ -1135,7 +1137,8 @@
     "mtsdtkzd-image.jpg",
     "mtsdu1n1-image.jpg",
     "mtsdu86d-image.jpg",
-    "mtsdvga9-image.jpg"
+    "mtsdvga9-image.jpg",
+    "mtsdwc7q-image.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
