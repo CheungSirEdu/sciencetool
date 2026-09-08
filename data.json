@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:33:20.103Z",
+  "updatedAt": "2026-09-08T08:33:30.682Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -1045,11 +1045,11 @@
       "topic": "10.天氣",
       "name": "指南針",
       "photos": [
-        "自製指南針、方向儀.jpeg"
+        "mtse5cig-image.jpg"
       ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:33:30.681Z",
       "sort": 20
     },
     {
