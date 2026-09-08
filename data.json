@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:12:06.024Z",
+  "updatedAt": "2026-09-08T08:12:28.634Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -487,7 +487,7 @@
       ],
       "source": "excel",
       "editedOnWeb": true,
-      "updatedAt": "2026-09-08T08:12:06.024Z",
+      "updatedAt": "2026-09-08T08:12:07.054Z",
       "sort": 10
     },
     {
@@ -508,10 +508,12 @@
       "grade": 4,
       "topic": "3. 天氣與氣候",
       "name": "色素",
-      "photos": [],
+      "photos": [
+        "mtsdwc7q-image.jpg"
+      ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:12:28.634Z",
       "sort": 10
     },
     {
