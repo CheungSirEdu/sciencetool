@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:20:30.261Z",
+  "updatedAt": "2026-09-08T08:20:59.867Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -749,10 +749,12 @@
       "grade": 4,
       "topic": "15. 光的特性",
       "name": "鏡片",
-      "photos": [],
+      "photos": [
+        "mtsegyb3-image.jpg"
+      ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:20:59.867Z",
       "sort": 40
     },
     {
@@ -1215,7 +1217,8 @@
     "mtsed0jc-image.jpg",
     "mtseedm8-image.jpg",
     "mtsefqsk-image.jpg",
-    "mtsegb74-image.jpg"
+    "mtsegb74-image.jpg",
+    "mtsegyb3-image.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
