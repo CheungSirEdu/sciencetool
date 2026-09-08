@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:20:59.867Z",
+  "updatedAt": "2026-09-08T08:21:10.328Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -738,10 +738,12 @@
       "grade": 4,
       "topic": "15. 光的特性",
       "name": "鋁箔",
-      "photos": [],
+      "photos": [
+        "mtseh5gj-image.jpg"
+      ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:21:10.328Z",
       "sort": 30
     },
     {
@@ -1218,7 +1220,8 @@
     "mtseedm8-image.jpg",
     "mtsefqsk-image.jpg",
     "mtsegb74-image.jpg",
-    "mtsegyb3-image.jpg"
+    "mtsegyb3-image.jpg",
+    "mtseh5gj-image.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
