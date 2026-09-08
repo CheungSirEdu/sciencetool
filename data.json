@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:24:56.632Z",
+  "updatedAt": "2026-09-08T08:25:19.980Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -790,10 +790,12 @@
       "grade": 4,
       "topic": "16. 摩擦力",
       "name": "兩孔木塊",
-      "photos": [],
+      "photos": [
+        "mtsemj2n-image.jpg"
+      ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:25:19.979Z",
       "sort": 10
     },
     {
@@ -1282,7 +1284,8 @@
     "mtsejua3-image.jpg",
     "mtsekt8d-image.jpg",
     "mtselr3p-image.jpg",
-    "mtsem0yu-image.jpg"
+    "mtsem0yu-image.jpg",
+    "mtsemj2n-image.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
