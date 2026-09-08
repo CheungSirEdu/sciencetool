@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:18:03.943Z",
+  "updatedAt": "2026-09-08T08:19:00.289Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -725,10 +725,12 @@
       "grade": 4,
       "topic": "14. 物質的變化",
       "name": "生鏽實驗套裝",
-      "photos": [],
+      "photos": [
+        "mtseedm8-image.jpg"
+      ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:19:00.289Z",
       "sort": 10
     },
     {
@@ -1206,7 +1208,8 @@
     "mtseadhx-image.jpg",
     "mtseciaa-image.jpg",
     "mtsecoyh-image.jpg",
-    "mtsed0jc-image.jpg"
+    "mtsed0jc-image.jpg",
+    "mtseedm8-image.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
