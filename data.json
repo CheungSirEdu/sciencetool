@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:22:18.127Z",
+  "updatedAt": "2026-09-08T08:22:26.888Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -1149,6 +1149,19 @@
       "editedOnWeb": false,
       "updatedAt": "2026-09-08T07:51:57+08:00",
       "sort": 20
+    },
+    {
+      "id": "7ca3aa02-2957-4e58-a285-42f403f46561",
+      "grade": 4,
+      "topic": "15. 光的特性",
+      "name": "三綫激光",
+      "photos": [
+        "mtseilrx-image.jpg"
+      ],
+      "source": "web",
+      "editedOnWeb": true,
+      "sort": 50,
+      "updatedAt": "2026-09-08T08:22:26.888Z"
     }
   ],
   "photos": [
