@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:38:24.330Z",
+  "updatedAt": "2026-09-08T08:38:33.239Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -1148,11 +1148,12 @@
       "topic": "14.聲音的特性",
       "name": "八弦琴",
       "photos": [
-        "mtsf3cjc-image.jpg"
+        "mtsf3cjc-image.jpg",
+        "mtsf3jgj-image.jpg"
       ],
       "source": "excel",
       "editedOnWeb": true,
-      "updatedAt": "2026-09-08T08:38:24.329Z",
+      "updatedAt": "2026-09-08T08:38:33.239Z",
       "sort": 10
     },
     {
@@ -1357,7 +1358,8 @@
     "mtseyby7-image.jpg",
     "mtsf1bhd-image.jpg",
     "mtsf2tz6-image.jpg",
-    "mtsf3cjc-image.jpg"
+    "mtsf3cjc-image.jpg",
+    "mtsf3jgj-image.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
