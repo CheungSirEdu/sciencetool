@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:46:24.571Z",
+  "updatedAt": "2026-09-08T08:47:03.143Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -330,12 +330,10 @@
       "grade": 2,
       "topic": "9.磁鐵的特性",
       "name": "磁鐵",
-      "photos": [
-        "mtsfdmxc-image.jpg"
-      ],
+      "photos": [],
       "source": "excel",
-      "editedOnWeb": true,
-      "updatedAt": "2026-09-08T08:46:24.571Z",
+      "editedOnWeb": false,
+      "updatedAt": "2026-09-08T07:51:57+08:00",
       "sort": 10
     },
     {
@@ -357,11 +355,11 @@
       "topic": "12.奇思妙想",
       "name": "蜻蜓標本",
       "photos": [
-        "mtsfd1gn-image.jpg"
+        "插頭、蜂鳴器、綠豆、蜻蜓.jpeg"
       ],
       "source": "excel",
-      "editedOnWeb": true,
-      "updatedAt": "2026-09-08T08:46:05.535Z",
+      "editedOnWeb": false,
+      "updatedAt": "2026-09-08T07:51:57+08:00",
       "sort": 20
     },
     {
@@ -1257,17 +1255,15 @@
       "updatedAt": "2026-09-08T08:29:12.258Z"
     },
     {
-      "id": "62d68b03-a2aa-4d89-a4a4-3a7be933ad9e",
+      "id": "c396260c-b77f-4eb5-a8b5-3fe8e70bbb78",
       "grade": 2,
       "topic": "5. 天氣與我",
-      "name": "自製指南針",
-      "photos": [
-        "mtsfbzdp-image.jpg"
-      ],
+      "name": "司南",
+      "photos": [],
       "source": "web",
       "editedOnWeb": true,
       "sort": 40,
-      "updatedAt": "2026-09-08T08:45:07.935Z"
+      "updatedAt": "2026-09-08T08:47:03.143Z"
     }
   ],
   "photos": [
@@ -1358,9 +1354,7 @@
     "mtseyby7-image.jpg",
     "mtsf6wdp-image.jpg",
     "mtsf9u4s-image.jpg",
-    "mtsfbzdp-image.jpg",
-    "mtsfd1gn-image.jpg",
-    "mtsfdmxc-image.jpg"
+    "mtsfege2-image.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
