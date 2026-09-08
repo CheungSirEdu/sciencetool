@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:00:11.224Z",
+  "updatedAt": "2026-09-08T08:00:37.194Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -42,11 +42,12 @@
       "topic": "3. 植物知多少",
       "name": "綠豆",
       "photos": [
-        "插頭、蜂鳴器、綠豆、蜻蜓.jpeg"
+        "插頭、蜂鳴器、綠豆、蜻蜓.jpeg",
+        "mtsdqqpc-image.jpg"
       ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:00:37.193Z",
       "sort": 30
     },
     {
@@ -1117,7 +1118,8 @@
     "風力車.jpeg",
     "骨骼模型.jpeg",
     "mtsdpkd0-image.jpg",
-    "mtsdq66n-image.jpg"
+    "mtsdq66n-image.jpg",
+    "mtsdqqpc-image.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
