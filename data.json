@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:23:29.346Z",
+  "updatedAt": "2026-09-08T08:24:13.353Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -1175,6 +1175,19 @@
       "editedOnWeb": true,
       "sort": 60,
       "updatedAt": "2026-09-08T08:23:29.346Z"
+    },
+    {
+      "id": "2f933209-c1c1-4e5d-90b9-dcfd21b14c12",
+      "grade": 4,
+      "topic": "15. 光的特性",
+      "name": "凸凹透鏡",
+      "photos": [
+        "mtsejua3-image.jpg"
+      ],
+      "source": "web",
+      "editedOnWeb": true,
+      "sort": 70,
+      "updatedAt": "2026-09-08T08:23:30.147Z"
     }
   ],
   "photos": [
@@ -1249,7 +1262,8 @@
     "mtsegyb3-image.jpg",
     "mtseh5gj-image.jpg",
     "mtseilrx-image.jpg",
-    "mtsejua3-image.jpg"
+    "mtsejua3-image.jpg",
+    "mtsekt8d-image.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
