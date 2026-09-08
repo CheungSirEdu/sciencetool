@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:17:41.197Z",
+  "updatedAt": "2026-09-08T08:17:55.736Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -674,11 +674,12 @@
       "topic": "13. 金屬和非金屬",
       "name": "鋁棒",
       "photos": [
-        "mtseciaa-image.jpg"
+        "mtseciaa-image.jpg",
+        "mtsed0jc-image.jpg"
       ],
       "source": "excel",
       "editedOnWeb": true,
-      "updatedAt": "2026-09-08T08:17:32.741Z",
+      "updatedAt": "2026-09-08T08:17:55.736Z",
       "sort": 60
     },
     {
@@ -1205,7 +1206,8 @@
     "mtsea0tn-image.jpg",
     "mtseadhx-image.jpg",
     "mtseciaa-image.jpg",
-    "mtsecoyh-image.jpg"
+    "mtsecoyh-image.jpg",
+    "mtsed0jc-image.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
