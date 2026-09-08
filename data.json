@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:42:19.066Z",
+  "updatedAt": "2026-09-08T08:42:50.375Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -212,10 +212,12 @@
       "grade": 2,
       "topic": "5. 天氣與我",
       "name": "紙杯",
-      "photos": [],
+      "photos": [
+        "杯.jpeg"
+      ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:42:50.375Z",
       "sort": 20
     },
     {
@@ -1249,17 +1251,6 @@
       "editedOnWeb": true,
       "sort": 100,
       "updatedAt": "2026-09-08T08:29:12.258Z"
-    },
-    {
-      "id": "d83f8b82-ef37-4710-ae82-5a2a274c784e",
-      "grade": 2,
-      "topic": "5. 天氣與我",
-      "name": "自製指南針",
-      "photos": [],
-      "source": "web",
-      "editedOnWeb": true,
-      "sort": 40,
-      "updatedAt": "2026-09-08T08:42:19.066Z"
     }
   ],
   "photos": [
@@ -1348,8 +1339,7 @@
     "mtsewtmt-image.jpg",
     "mtsexg9t-image.jpg",
     "mtseyby7-image.jpg",
-    "mtsf6wdp-image.jpg",
-    "mtsf8d5n-image.jpg"
+    "mtsf6wdp-image.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
