@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:04:58.394Z",
+  "updatedAt": "2026-09-08T08:05:32.212Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -157,10 +157,12 @@
       "grade": 2,
       "topic": "3. 動手種植物",
       "name": "棉花",
-      "photos": [],
+      "photos": [
+        "mtsdq66n-image.jpg"
+      ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:05:32.211Z",
       "sort": 30
     },
     {
