@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:34:30.863Z",
+  "updatedAt": "2026-09-08T08:34:47.397Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -1056,14 +1056,13 @@
       "id": "1ee282bd-7ad0-4c0a-9c6b-ea33e2f667ce",
       "grade": 5,
       "topic": "10.天氣",
-      "name": "製作風向儀套件",
+      "name": "製作方向儀套件",
       "photos": [
-        "自製指南針、方向儀.jpeg",
         "mtseyby7-image.jpg"
       ],
       "source": "excel",
       "editedOnWeb": true,
-      "updatedAt": "2026-09-08T08:34:30.863Z",
+      "updatedAt": "2026-09-08T08:34:47.396Z",
       "sort": 50
     },
     {
