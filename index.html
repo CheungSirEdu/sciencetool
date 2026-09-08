@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#1f6b4a" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="科學教具" />
+  <link rel="apple-touch-icon" href="icon.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <title>科學科教具</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="banner">目前為<b>編輯模式</b>：所有同事均可新增、修改名稱、更換相片或刪除教具。所有改動將即時儲存。</div>
+  <div class="app">
+    <header class="topbar">
+      <a class="brand" href="#/">
+        <span class="mark" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+            <path d="M8 4h10v3c0 3.3-2.7 6-6 6h0c-3.3 0-6-2.7-6-6V4z" stroke="currentColor" stroke-width="1.7"/>
+            <path d="M7 21h12M13 13v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            <circle cx="18.5" cy="7.5" r="1.4" fill="currentColor"/>
+          </svg>
+        </span>
+        <span>
+          <h1>科學科教具</h1>
+          <p>2026–2027 · 電腦、平板、電話同一網址</p>
+        </span>
+      </a>
+      <div class="top-actions">
+        <button class="btn ghost" id="btn-reload" type="button">
+          <span class="label-full">重新載入 Excel</span>
+          <span class="label-short">載入表</span>
+        </button>
+        <button class="btn" id="btn-edit" type="button">
+          <span class="label-full">編輯教具</span>
+          <span class="label-short">編輯</span>
+        </button>
+      </div>
+    </header>
+    <main class="wrap" id="view"></main>
+    <p class="foot" id="foot"></p>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
