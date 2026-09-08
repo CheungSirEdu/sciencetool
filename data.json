@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:28:07.447Z",
+  "updatedAt": "2026-09-08T08:28:14.510Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -943,12 +943,11 @@
       "topic": "5.顯微鏡下的微生物",
       "name": "行動顯微鏡",
       "photos": [
-        "行動顯微鏡.jpeg",
         "mtseq3y1-image.jpg"
       ],
       "source": "excel",
       "editedOnWeb": true,
-      "updatedAt": "2026-09-08T08:28:07.446Z",
+      "updatedAt": "2026-09-08T08:28:14.509Z",
       "sort": 10
     },
     {
