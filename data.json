@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:41:31.684Z",
+  "updatedAt": "2026-09-08T08:41:56.302Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -225,10 +225,12 @@
       "grade": 2,
       "topic": "5. 天氣與我",
       "name": "量杯",
-      "photos": [],
+      "photos": [
+        "mtsf7vz5-image.jpg"
+      ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:41:56.301Z",
       "sort": 30
     },
     {
@@ -1339,7 +1341,8 @@
     "mtsewtmt-image.jpg",
     "mtsexg9t-image.jpg",
     "mtseyby7-image.jpg",
-    "mtsf6wdp-image.jpg"
+    "mtsf6wdp-image.jpg",
+    "mtsf7vz5-image.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
