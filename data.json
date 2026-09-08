@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:13:56.016Z",
+  "updatedAt": "2026-09-08T08:14:59.757Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -602,7 +602,7 @@
       ],
       "source": "excel",
       "editedOnWeb": true,
-      "updatedAt": "2026-09-08T08:13:56.015Z",
+      "updatedAt": "2026-09-08T08:13:58.448Z",
       "sort": 20
     },
     {
@@ -634,10 +634,12 @@
       "grade": 4,
       "topic": "13. 金屬和非金屬",
       "name": "不鏽鋼棒",
-      "photos": [],
+      "photos": [
+        "mtse97u2-image.jpg"
+      ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-08T08:14:59.757Z",
       "sort": 10
     },
     {
@@ -1184,7 +1186,8 @@
     "mtse5cig-image.jpg",
     "mtse6ii3-image.jpg",
     "mtse6pf0-image.jpg",
-    "mtse7eia-image.jpg"
+    "mtse7eia-image.jpg",
+    "mtse97u2-image.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
