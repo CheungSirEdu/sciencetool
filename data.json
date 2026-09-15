@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:54:16.528Z",
+  "updatedAt": "2026-09-15T03:31:05.943Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -1156,10 +1156,12 @@
       "grade": 5,
       "topic": "14.聲音的特性",
       "name": "八弦琴",
-      "photos": [],
+      "photos": [
+        "mtse9uzt-image.jpg"
+      ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-15T03:31:05.943Z",
       "sort": 10
     },
     {
