@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-17T01:09:03.790Z",
+  "updatedAt": "2026-09-17T01:09:43.379Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -238,10 +238,12 @@
       "grade": 2,
       "topic": "5. 天氣與我",
       "name": "雨量計",
-      "photos": [],
+      "photos": [
+        "mu4u10hd-WhatsApp Image 2026-09-17 at 09.03.31 (5).jpeg"
+      ],
       "source": "excel",
-      "editedOnWeb": false,
-      "updatedAt": "2026-09-08T07:51:57+08:00",
+      "editedOnWeb": true,
+      "updatedAt": "2026-09-17T01:09:43.379Z",
       "sort": 10
     },
     {
@@ -1378,7 +1380,9 @@
     "mtsfgdf3-image.jpg",
     "mtsfhcnm-image.jpg",
     "mtsfho4e-image.jpg",
-    "mtsfnbn0-image.jpg"
+    "mtsfnbn0-image.jpg",
+    "mu4u06e5-WhatsApp Image 2026-09-17 at 09.03.31 (5).jpeg",
+    "mu4u10hd-WhatsApp Image 2026-09-17 at 09.03.31 (5).jpeg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
