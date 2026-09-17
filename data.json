@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-17T01:15:23.790Z",
+  "updatedAt": "2026-09-17T01:15:44.573Z",
   "excelImportedAt": "2026-09-08T08:58:12+08:00",
   "grades": [
     1,
@@ -1310,11 +1310,13 @@
       "grade": 1,
       "topic": "5. 成長與身體轉變",
       "name": "牙齒模型(恆齒)",
-      "photos": [],
+      "photos": [
+        "mu4u8s1o-圖片1.jpg"
+      ],
       "source": "web",
       "editedOnWeb": true,
       "sort": 20,
-      "updatedAt": "2026-09-17T01:15:23.790Z"
+      "updatedAt": "2026-09-17T01:15:44.573Z"
     }
   ],
   "photos": [
@@ -1414,7 +1416,9 @@
     "mu4u2vt5-WhatsApp Image 2026-09-17 at 09.03.31 (4).jpeg",
     "mu4u3fie-WhatsApp Image 2026-09-17 at 09.03.31 (6).jpeg",
     "mu4u3ouz-WhatsApp Image 2026-09-17 at 09.03.31 (3).jpeg",
-    "mu4u70b8-WhatsApp Image 2026-09-17 at 09.03.31 (1).jpeg"
+    "mu4u70b8-WhatsApp Image 2026-09-17 at 09.03.31 (1).jpeg",
+    "mu4u8byg-圖片1.jpg",
+    "mu4u8s1o-圖片1.jpg"
   ],
   "siteUrl": "https://sciencetool.surge.sh/",
   "lanUrl": "https://sciencetool.surge.sh/",
